@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hubscript</title>
+  </head>
+  
+  <body>
+    <h1>Hubscript</h1>
+    <p>
+      HubScript is a CLI utility tool designed to help you maintain your JavaScript and Typescript projects.
+    </p>
+    <b>Table of Contents</b>
+    <ul>
+      <li>
+        <a href="#about">About</a>
+        <ul>
+          <li>
+            <a href="#about-templates">Template Structure</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#cli">CLI</a>
+        <ul>
+          <li>
+            <a href="#cli-coms">Commands</a>
+            <ul>
+              <li>Create</li>
+              <li>Add</li>
+              <li>Reset</li>
+              <li>Move</li>
+              <li>Rename</li>
+              <li>Remove</li>
+              <li>Delete</li>
+              <li>List</li>
+              <li>Visit</li>
+              <li>Help</li>
+              <li>Ghosthunt</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h2 id="about">About</h2>
+    <p>This part will teach you the basics of HubScript.</p>
+      <h3 id="about-templates">Template Structure</h3>
+      <p>All projects created with HubScript are created based on the templates defined by the user, a template folder can have any name but 
+      must folow a certain structure, where each template folder must contain :</p>
+        <h4>_template_</h4>
+        <p>This folder will contain all the content that must be <b>copied</b> when creating a new project, things like the src folder, assests, 
+        configuration files not written in json, etc.</p>
+        <p>The structure of the content inside this folder will be structure of the final project created using this template.</p>
+        <h4>template.config.json</h4>
+        <p>This file gose along side the <b>_template_</b> folder and inside of it will define the content of the configuration files written
+        in <b>json</b>.</p>
+        <p>This file is important because HubScript automatically creates the <b>package.json</b> file for your project, so any change you want
+        to be made automatically to your configuration files must be specified.</p>
+        <p>A simple <b>template.config.json</b> looks like this:</p>
+        <pre>
+          {
+            "filename.json" {
+              "content1": true,
+              "content2": "value",
+              "content3": 100,
+            },
+            "filename2.json" {
+              "content1": true,
+              "content2": "value",
+              "content3": 100,
+            }
+          }
+        </pre>
+        <p>Each key has the name of the file you want to change and the value of each key is the content of said file.</p>
+        <p>Exemple:</p>
+        <pre>
+          {
+            "package.json": {
+              "description": "Created with HubScript.",
+              "dependencies": {
+                "@types/chalk": "^2.2.0",
+                "@types/node": "^14.14.37",
+                "chalk": "^4.1.1",
+                "typescript": "^4.2.3"
+              },
+              "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1",
+                "start": "tsc -w"
+              }
+            },
+            "tsconfig.json": {
+              "compilerOptions": {
+                "lib": ["ES2015", "DOM"],
+                "module": "es2020",
+                "baseUrl": "./src",
+                "sourceMap": false,
+                "target": "es6",
+                "typeRoots": [
+                  "./node_modules/@types/*",
+                  "./src/@types/*"
+                ]
+              },
+                "include": [
+                  "src"
+              ]
+            }
+          }
+        </pre>
+    <h2 id="cli">Command Line Interface</h2>
+    <p>The command line interface allows you to freely use HubScript without needing to care about implementation details.</p>
+      <h3 id="cli-coms">Commands</h3>
+        <h4>Create</h4>
+  </body>
+</html>
